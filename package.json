@@ -2,15 +2,17 @@
   "name": "@mono/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {
-    "start:all": "concurrently \"nx run @mono/FE:dev\" \"nx run @mono/backend:serve\""
-  },
+"scripts": {
+  "start:all": "concurrently \"nx run @mono/FE:dev\" \"nx run @mono/backend:serve\" \"nx run @mono/auth-service:serve\""
+},
+
   "private": true,
   "dependencies": {
     "@react-router/node": "^7.2.0",
     "@react-router/serve": "^7.2.0",
     "@types/express": "^5.0.2",
     "axios": "^1.6.0",
+    "bcrypt": "^6.0.0",
     "express": "^5.1.0",
     "isbot": "^4.4.0",
     "mongoose": "^8.15.0",
@@ -38,6 +40,7 @@
     "@swc/jest": "~0.2.36",
     "@testing-library/dom": "10.4.0",
     "@testing-library/react": "16.1.0",
+    "@types/bcrypt": "^5.0.2",
     "@types/jest": "^29.5.12",
     "@types/node": "^20.0.0",
     "@types/react": "19.0.0",
@@ -70,6 +73,7 @@
   "workspaces": [
     "apps/*",
     "shared-utils",
-    "sharedUtils"
+    "sharedUtils",
+    "apps/backend/*"
   ]
 }

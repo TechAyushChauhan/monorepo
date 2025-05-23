@@ -1,13 +1,10 @@
 {
-  "name": "@mono/backend",
+  "name": "@mono/auth-service",
   "version": "0.0.1",
   "private": true,
   "nx": {
     "targets": {
       "build": {
-        "format": [
-          "esm"
-        ],
         "executor": "@nx/esbuild:esbuild",
         "outputs": [
           "{options.outputPath}"
@@ -15,15 +12,15 @@
         "defaultConfiguration": "production",
         "options": {
           "platform": "node",
-          "outputPath": "apps/backend/dist",
+          "outputPath": "apps/backend/auth-service/dist",
           "format": [
             "cjs"
           ],
           "bundle": false,
-          "main": "apps/backend/src/main.ts",
-          "tsConfig": "apps/backend/tsconfig.app.json",
+          "main": "apps/backend/auth-service/src/main.ts",
+          "tsConfig": "apps/backend/auth-service/tsconfig.app.json",
           "assets": [
-            "apps/backend/src/assets"
+            "apps/backend/auth-service/src/assets"
           ],
           "esbuildOptions": {
             "sourcemap": true,
@@ -52,27 +49,18 @@
           "build"
         ],
         "options": {
-          "buildTarget": "@mono/backend:build",
-          "runBuildTargetDependencies": false,
-          "inspect": false
+          "buildTarget": "@mono/auth-service:build",
+          "runBuildTargetDependencies": false
         },
         "configurations": {
           "development": {
-            "buildTarget": "@mono/backend:build:development"
+            "buildTarget": "@mono/auth-service:build:development"
           },
           "production": {
-            "buildTarget": "@mono/backend:build:production"
+            "buildTarget": "@mono/auth-service:build:production"
           }
-        }
-      },
-      "test": {
-        "options": {
-          "passWithNoTests": true
         }
       }
     }
-  },
-  "dependencies": {
-    "bcrypt": "^6.0.0"
   }
 }
