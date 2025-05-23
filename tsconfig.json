@@ -5,6 +5,21 @@
   "references": [
     {
       "path": "./apps/FE"
+    },
+    {
+      "path": "./apps/backend-e2e"
+    },
+    {
+      "path": "./apps/backend"
+    },
+    {
+      "path": "./shared-utils"
+    },
+    {
+      "path": "./shared-utils"
+    },
+    {
+      "path": "./sharedUtils"
     }
   ]
 }

@@ -16,6 +16,11 @@
     "skipLibCheck": true,
     "strict": true,
     "target": "es2022",
-    "customConditions": ["development"]
+    "customConditions": ["development"],
+    "baseUrl": ".",
+    "paths": {
+      "@mono/FE": ["apps/FE/src/index.ts"],
+      "@mono/shared-utils": ["shared-utils/src/index.ts"]
+    }
   }
 }
