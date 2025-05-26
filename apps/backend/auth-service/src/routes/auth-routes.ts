@@ -1,11 +1,14 @@
-import { register, login } from '../controller/authController';
+// auth-routes.ts
 import { Router, Request, Response, NextFunction } from 'express';
+import { register, login } from '../controller/authController';
 
-const router:Router = Router();
+const router = Router();
 
-const asyncHandler = (fn: (req: Request, res: Response, next: NextFunction) => Promise<any>) =>
-  (req: Request, res: Response, next: NextFunction) =>
-    Promise.resolve(fn(req, res, next)).catch(next);
+const asyncHandler = (fn: any) => (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => Promise.resolve(fn(req, res, next)).catch(next);
 
 router.post('/register', asyncHandler(register));
 router.post('/login', asyncHandler(login));
